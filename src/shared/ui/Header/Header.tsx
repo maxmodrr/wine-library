@@ -5,7 +5,7 @@ import { useState } from 'react';
 import clsx from 'clsx';
 
 export const Header = () => {
-  const [activeLang, setActiveLang] = useState('English');
+  const [activeLang] = useState('English');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleOpenLanguageMenu = () => {
