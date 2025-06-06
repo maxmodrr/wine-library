@@ -1,0 +1,17 @@
+@use '/src/shared/styles/vars.scss' as *;
+@use '/src/shared/styles/mixins.scss' as *;
+
+.Button {
+  display: inline-flex;
+  padding-block: 18px;
+  padding-inline: 12px;
+  background-color: $green;
+  color: white;
+  font-size: 18px;
+  line-height: 19px;
+  border-radius: 10px;
+  justify-content: center;
+  cursor: pointer;
+
+  @include hover(background-color, $green-hover);
+}
