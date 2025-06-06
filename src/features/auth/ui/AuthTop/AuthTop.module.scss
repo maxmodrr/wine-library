@@ -1,0 +1,39 @@
+@use '/src/shared/styles/vars.scss' as *;
+
+.AuthTop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 24px 0;
+  width: 100%;
+
+  &::after {
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: $gray-border;
+  }
+
+  &__sign {
+    text-transform: uppercase;
+    color: $black-main;
+  }
+
+  &__already {
+    & > * {
+      font-size: 18px;
+      line-height: 27px;
+    }
+
+    & > span {
+      margin-inline-end: 20px;
+      color: $gray-secondary-text;
+    }
+
+    & > a {
+      color: $green;
+      font-weight: 800;
+    }
+  }
+}
