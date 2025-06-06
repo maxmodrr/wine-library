@@ -1,0 +1,37 @@
+@use '../shared/styles/mixins.scss' as *;
+
+:root {
+  --transition-time: 0.3s;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Outfit, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+input {
+  width: 100%;
+  outline: none;
+}
+
+li {
+  list-style: none;
+}
+
+main {
+  @include centered;
+}
+
+button {
+  border: none;
+}
