@@ -1,28 +1,43 @@
 @use '/src/shared/styles/vars.scss' as *;
+@use '/src/shared/styles/holders.scss' as *;
 
 .Input {
-  padding: 16px;
+  padding: 16px 50px 16px 16px;
   font-size: 20px;
   line-height: 25px;
-  margin-top: 8px;
   border-radius: 10px;
   border: 1px solid $gray-border;
-
-  &Error {
-    box-shadow: 0 0 8px rgb(247 40 40);
-  }
+  color: $gray-input-text;
+  font-weight: 600;
+  caret-color: $blue;
 
   &::placeholder {
-    font-weight: 500;
+    color: $gray-placeholder;
+    font-weight: 600;
   }
 
-  &__label {
-    font-size: 20px;
-    line-height: 25px;
+  &:focus:not(.Input__error) {
+    outline: 2px solid $green;
+  }
+
+  &__blockInput {
+    position: relative;
   }
 
   &__error {
-    font-size: 12px;
-    color: rgb(247 40 40);
+    outline: 2px solid $error;
+  }
+
+  &__labelText {
+    font-size: 20px;
+    line-height: 25px;
+    display: inline-block;
+    margin-bottom: 8px;
+  }
+
+  &__textError {
+    @extend %secondary;
+
+    color: $error;
   }
 }

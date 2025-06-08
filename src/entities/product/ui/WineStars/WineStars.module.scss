@@ -1,0 +1,15 @@
+@use '/src/shared/styles/vars.scss' as *;
+
+.WineStars {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+
+  @for $num from 1 through 5 {
+    &--#{$num} .WineStars__star:nth-child(-n + #{$num}) {
+      path {
+        fill: $yellow-star;
+      }
+    }
+  }
+}

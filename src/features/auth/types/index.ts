@@ -1,21 +1,27 @@
 import type { RegisterOptions } from 'react-hook-form';
 
-export interface FormFields {
+export interface FormRegisterFields {
   firstName: string;
   lastName: string;
   email: string;
   password: string;
 }
 
-export type FieldConfig<K extends keyof FormFields> = {
+export interface FormAuthFields {
+  email: string;
+  password: string;
+}
+export type CommonFields = keyof FormAuthFields | keyof FormRegisterFields;
+
+type FieldConfig<K extends CommonFields> = {
   name: K;
   label: string;
   placeholder: string;
-  rules: RegisterOptions<FormFields, K>;
+  rules: RegisterOptions<FormRegisterFields | FormAuthFields, K>;
   type?: string;
 };
 
-export interface FormSection {
+export interface IFormSection {
   title: string;
-  fields: FieldConfig<keyof FormFields>[];
+  fields: FieldConfig<CommonFields>[];
 }

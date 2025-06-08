@@ -1,0 +1,9 @@
+@use '/src/shared/styles/vars.scss' as *;
+
+.WineListFilter {
+  grid-column: span 3;
+  border-right: 1px solid $gray-border;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}

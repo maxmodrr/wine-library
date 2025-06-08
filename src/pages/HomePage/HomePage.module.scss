@@ -1,0 +1,11 @@
+@use '/src/shared/styles/mixins.scss' as *;
+@use '/src/shared/styles/vars.scss' as *;
+
+.HomePage {
+  @include grid;
+
+  &__bg {
+    grid-column: 1 / -1;
+    margin-block: 32px;
+  }
+}

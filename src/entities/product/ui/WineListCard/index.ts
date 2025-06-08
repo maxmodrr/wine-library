@@ -1,0 +1,1 @@
+export { WineListCard } from './WineListCard';

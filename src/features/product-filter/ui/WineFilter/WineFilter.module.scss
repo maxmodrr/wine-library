@@ -1,0 +1,49 @@
+@use '/src/shared/styles/vars.scss' as *;
+
+.WineFilter {
+  &__title {
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+
+  &__allFilters {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__checkBoxBlock{
+    position: relative;
+  }
+
+  &__label {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    cursor: pointer;
+    width: fit-content;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 24px;
+      aspect-ratio: 1;
+      border: 2px solid black;
+      border-radius: 3px;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+
+  &__checkBox {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    top: 0;
+    left: 0;
+
+    &:checked + .WineFilter__label::before {
+      background-image: url('../../assets/icons/icon-success-black.svg');
+    }
+  }
+}
