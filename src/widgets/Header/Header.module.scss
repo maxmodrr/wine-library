@@ -3,7 +3,7 @@
 
 .Header {
   margin-top: 50px;
-  padding-inline: 20px;
+  padding-inline: $padding-inline-header-footer;
 
   &__content {
     display: flex;
@@ -20,34 +20,9 @@
     flex-grow: 1;
   }
 
-  &__logo {
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: 24px;
-  }
-
   &__searchBlock {
     position: relative;
     width: 700px;
-  }
-
-  &__search {
-    padding-block: 18px;
-    padding-inline-start: 40px;
-    border-radius: 30px;
-    border: none;
-    background-color: $gray-light;
-
-    &::placeholder {
-      font-weight: 500;
-    }
-  }
-
-  &__iconSearch {
-    position: absolute;
-    left: 22px;
-    top: 50%;
-    transform: translate(-50%, -50%);
   }
 
   &__rightSide {

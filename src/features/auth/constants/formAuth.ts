@@ -27,6 +27,7 @@ export const formAuth: IFormSection[] = [
         rules: {
           required: 'This field is required',
         },
+        type: 'password',
       },
     ],
   },
