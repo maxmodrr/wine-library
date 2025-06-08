@@ -1,0 +1,1 @@
+export { WineStars } from './WineStars';

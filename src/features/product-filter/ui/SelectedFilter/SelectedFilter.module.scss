@@ -1,0 +1,30 @@
+@use '/src/shared/styles/vars.scss' as *;
+
+.SelectedFilter {
+  &__title {
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__value {
+    display: flex;
+    align-items: center;
+    width: 180px;
+    padding: 4px;
+    background-color: $gray-light;
+
+    span{
+      flex-grow: 1;
+    }
+
+    svg{
+      cursor: pointer;
+    }
+  }
+}

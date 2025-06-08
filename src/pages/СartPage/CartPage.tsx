@@ -1,6 +1,3 @@
-
 export const CartPage = () => {
-  return (
-    <div>CartPage</div>
-  )
-}
+  return <div>CartPage</div>;
+};

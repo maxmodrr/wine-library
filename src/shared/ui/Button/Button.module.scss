@@ -3,15 +3,21 @@
 
 .Button {
   display: inline-flex;
-  padding-block: 18px;
+  padding-block: 16px;
   padding-inline: 12px;
   background-color: $green;
   color: white;
   font-size: 18px;
   line-height: 19px;
+  font-weight: 400;
   border-radius: 10px;
   justify-content: center;
   cursor: pointer;
 
   @include hover(background-color, $green-hover);
+
+  &:disabled {
+    background-color: $gray-disabled-button;
+    cursor: not-allowed;
+  }
 }

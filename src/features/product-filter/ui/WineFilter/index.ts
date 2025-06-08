@@ -1,0 +1,1 @@
+export { WineFilter } from './WineFilter';

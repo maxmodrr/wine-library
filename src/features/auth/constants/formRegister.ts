@@ -1,9 +1,9 @@
-import type { FormSection } from '../types';
+import type { IFormSection } from '../types';
 
 const MIN_LENGTH_NAME = 3;
 const MAX_LENGTH_NAME = 10;
 
-export const formState: FormSection[] = [
+export const formRegister: IFormSection[] = [
   {
     title: 'Personal information',
     fields: [

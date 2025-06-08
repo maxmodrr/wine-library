@@ -25,8 +25,8 @@ export const Header = () => {
           </div>
         </div>
         <div className={s.Header__rightSide}>
-          <Link to="/auth/register" className={s.Header__item}>
-            Sign up
+          <Link to="/about-us" className={s.Header__item}>
+            About us
           </Link>
           <ul
             className={clsx({
@@ -43,7 +43,7 @@ export const Header = () => {
           <Link to="/cart">
             <Icon name="cart" />
           </Link>
-          <Link to="/profile">
+          <Link to="/auth/register">
             <Icon name="profile" />
           </Link>
         </div>

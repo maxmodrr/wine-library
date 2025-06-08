@@ -1,4 +1,4 @@
-export const passwordRules = [
+export const passAuthRules = [
   'At least 1 lowercase letter',
   'At least 1 uppercase letter',
   'At least 1 number',

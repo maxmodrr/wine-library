@@ -1,52 +1,33 @@
-import s from './AuthForm.module.scss';
-import { Fragment } from 'react/jsx-runtime';
-import { Input } from '../../../../shared/ui/Input';
+import type { FormAuthFields } from '../../types';
 import { Button } from '../../../../shared/ui/Button';
+import { FormSection } from '../FormSection';
+import { formAuth } from '../../constants/formAuth';
 import { useForm, type SubmitHandler } from 'react-hook-form';
-import type { FormFields } from '../../types';
-import { formState } from '../../constants/formState';
-import { AuthPasswordsErrors } from '../AuthPasswordErrors/AuthPasswordErrors';
+import { FormWrapper } from '../FormWrapper';
+import { useCallback } from 'react';
 
 export const AuthForm = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors, dirtyFields},
-  } = useForm<FormFields>({
+    formState: { errors },
+  } = useForm<FormAuthFields>({
     mode: 'onChange',
   });
 
+  const hasErrors = !!Object.keys(errors).length;
 
-  const successSubmit: SubmitHandler<FormFields> = (data) => {
+  const successSubmit: SubmitHandler<FormAuthFields> = useCallback((data) => {
     console.log(data);
-  };
+  }, []);
 
   return (
-    <form onSubmit={handleSubmit(successSubmit)} className={s.AuthForm}>
-      {formState.map((section) => (
-        <div key={section.title} className={s.AuthForm__blockForm}>
-          <h2 className={s.AuthForm__info}>{section.title}</h2>
-          <div className={s.AuthForm__formContent}>
-            {section.fields.map((field) => (
-              <Fragment key={field.name}>
-                <Input
-                  type={field.type}
-                  label={field.label}
-                  hasError={!!errors?.[field.name]?.message}
-                  placeholder={field.placeholder}
-                  errorMessage={
-                    field.name !== 'password' ? errors?.[field.name]?.message : undefined
-                  }
-                  autoComplete="off"
-                  {...register(field.name, field.rules)}
-                />
-              </Fragment>
-            ))}
-          </div>
-        </div>
+    <FormWrapper onSubmit={handleSubmit(successSubmit)}>
+      {formAuth.map((section) => (
+        <FormSection section={section} register={register} errors={errors} isAuth={true} />
       ))}
-      <AuthPasswordsErrors isDirty={dirtyFields.password}  errors={errors} />
-      <Button>Sign Up</Button>
-    </form>
+
+      <Button disabled={hasErrors}>Login</Button>
+    </FormWrapper>
   );
 };

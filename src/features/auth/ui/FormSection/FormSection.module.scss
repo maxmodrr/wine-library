@@ -1,0 +1,25 @@
+@use '/src/shared/styles/vars.scss' as *;
+
+.FormSection {
+  &__blockForm {
+    width: 400px;
+  }
+
+  &__info {
+    margin-bottom: 16px;
+  }
+
+  &__formContent {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__closedEye{
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+}

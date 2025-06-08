@@ -15,7 +15,7 @@
 
   display: grid;
   grid-template-columns: repeat(var(--col-count), 1fr);
-  column-gap: 16px;
+  column-gap: 24px;
 
   @include on-tablet {
     --col-count: 6;
@@ -36,7 +36,7 @@
 
 @mixin centered {
   margin-inline: auto;
-  max-width: 1200px;
+  max-width: 1600px;
 
   @include padding-inline;
 }
