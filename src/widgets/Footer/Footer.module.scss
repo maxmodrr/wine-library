@@ -1,0 +1,26 @@
+@use '/src/shared/styles/mixins.scss' as *;
+@use '/src/shared/styles/vars.scss' as *;
+
+.Footer{
+  border-top: 1px solid $gray-border;
+  margin-top: 100px;
+  padding: 10px $padding-inline-header-footer;
+
+  &__content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include padding-inline;
+  }
+
+  &__logo{
+    font-size: 35px;
+  }
+
+  &__info{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+}

@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom';
 import s from './Header.module.scss';
-import { Icon } from '../Icon';
 import { useState } from 'react';
 import clsx from 'clsx';
+import { Icon } from '../../shared/ui/Icon';
+import { Logo } from '../../shared/ui/Logo';
+import { Search } from '../../features/search/ui';
 
 export const Header = () => {
   const [activeLang] = useState('English');
@@ -16,12 +18,9 @@ export const Header = () => {
     <header className={s.Header}>
       <div className={s.Header__content}>
         <div className={s.Header__leftSide}>
-          <Link to="/" className={s.Header__logo}>
-            wine valley
-          </Link>
+          <Logo />
           <div className={s.Header__searchBlock}>
-            <input type="text" className={s.Header__search} placeholder="Search" />
-            <Icon name="search" className={s.Header__iconSearch} />
+            <Search />
           </div>
         </div>
         <div className={s.Header__rightSide}>

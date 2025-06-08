@@ -3,12 +3,13 @@ import './main.scss';
 
 import { createRoot } from 'react-dom/client';
 import { Route, HashRouter as Router, Routes } from 'react-router-dom';
-import { CartPage } from '../pages/СartPage/CartPage.tsx';
-import { ProfilePage } from '../pages/ProfilePage/ProfilePage.tsx';
-import { RegisterPage } from '../pages/RegisterPage/RegisterPage.tsx';
-import { WrapperAuthPage } from '../pages/WrapperAuthPage/WrapperAuthPage.tsx';
-import { AuthPage } from '../pages/AuthPage/index.ts';
-import { HomePage } from '../pages/HomePage/HomePage.tsx';
+import { CartPage } from '../pages/СartPage';
+import { ProfilePage } from '../pages/ProfilePage';
+import { RegisterPage } from '../pages/RegisterPage';
+import { WrapperAuthPage } from '../pages/WrapperAuthPage';
+import { AuthPage } from '../pages/AuthPage';
+import { HomePage } from '../pages/HomePage';
+import { ProductPage } from '../pages/ProductPage';
 
 createRoot(document.getElementById('root')!).render(
   <Router>
@@ -20,6 +21,7 @@ createRoot(document.getElementById('root')!).render(
           <Route path="register" element={<RegisterPage />} />
           <Route path="login" element={<AuthPage />} />
         </Route>
+        <Route path="/about-us" element={<ProductPage />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="*" element={<p>Not found page</p>} />
       </Route>

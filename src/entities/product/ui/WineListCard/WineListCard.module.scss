@@ -1,7 +1,7 @@
 @use '/src/shared/styles/mixins.scss' as *;
 @use '/src/shared/styles/vars.scss' as *;
 
-.WineListCard{
+.WineListCard {
   &__cards {
     grid-column: span 9;
     row-gap: 16px;
@@ -9,12 +9,12 @@
     @include grid;
   }
 
-  &__title{
+  &__title {
     grid-column: 1 / -1;
     text-transform: uppercase;
   }
 
-  &__line{
+  &__line {
     grid-column: 1 / -1;
     height: 1px;
     background-color: $gray-border;

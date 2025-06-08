@@ -47,9 +47,16 @@ export const formRegister: IFormSection[] = [
       {
         name: 'email',
         label: 'Email',
-        placeholder: 'jharrots@example.com',
+        placeholder: '',
         rules: {
           required: 'This field is required',
+          validate: (email: string) => {
+            const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+            const isValidEmail = emailPattern.test(email);
+
+            return isValidEmail ? true : 'Invalid email';
+          },
         },
         type: 'email',
       },

@@ -2,18 +2,13 @@ import type { FormAuthFields } from '../../types';
 import { Button } from '../../../../shared/ui/Button';
 import { FormSection } from '../FormSection';
 import { formAuth } from '../../constants/formAuth';
-import { useForm, type SubmitHandler } from 'react-hook-form';
+import { type SubmitHandler } from 'react-hook-form';
 import { FormWrapper } from '../FormWrapper';
 import { useCallback } from 'react';
+import { useAuthForm } from '../../hooks/useAuthForm';
 
 export const AuthForm = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<FormAuthFields>({
-    mode: 'onChange',
-  });
+  const { register, handleSubmit, errors } = useAuthForm<FormAuthFields>();
 
   const hasErrors = !!Object.keys(errors).length;
 
@@ -24,7 +19,13 @@ export const AuthForm = () => {
   return (
     <FormWrapper onSubmit={handleSubmit(successSubmit)}>
       {formAuth.map((section) => (
-        <FormSection section={section} register={register} errors={errors} isAuth={true} />
+        <FormSection
+          key={section.title}
+          section={section}
+          register={register}
+          errors={errors}
+          isAuth={true}
+        />
       ))}
 
       <Button disabled={hasErrors}>Login</Button>

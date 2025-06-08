@@ -38,6 +38,8 @@
   &__textError {
     @extend %secondary;
 
+    display: inline-block;
+    margin-top: 8px;
     color: $error;
   }
 }
